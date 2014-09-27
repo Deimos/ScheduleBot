@@ -1,0 +1,37 @@
+[database]
+system = postgresql
+host = localhost
+database = database_name
+username = database_username
+password = database_password
+
+[reddit]
+user_agent = reddit_username
+username = reddit_username
+password = reddit_password
+wiki_page_name = %(username)s-schedule
+last_run = 1405129561
+last_message = 1405129517
+owner_username = your_username
+
+[loggers]
+keys = root
+
+[handlers]
+keys = roothand
+
+[formatters]
+keys = rootform
+
+[logger_root]
+level = INFO
+handlers = roothand
+
+[handler_roothand]
+class = StreamHandler
+formatter = rootform
+args = (sys.stdout,)
+
+[formatter_rootform]
+format = %(message)s
+
